@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Interactive Counter</title>
+</head>
+<body>
+<center>
+<br/>
+<br/>
+<h2>INTERACTIVE COUNTER</h2>
+<br/>
+<br/>
+<div id="counter">0</div>
+<br/>
+<br/>
+<button type="button" onclick="decr()">-1</button>
+<button type="button" onclick="reset()">RESET</button>
+<button type="button" onclick="incr()">+1</button>
+</center>
+<script>
+let count=0;
+function decr(){
+count--;
+document.getElementById("counter").innerHTML=count;
+}
+function reset(){
+count=0;
+document.getElementById("counter").innerHTML=count;
+}
+function incr(){
+count++;
+document.getElementById("counter").innerHTML=count;
+}
+</script>
+</body>
+</html>
