@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Registration page</title>
+</head>
+<body>
+<center>
+<h2>Registration Form</h2>
+<br/>
+<br/>
+<label>Username:</label> <input type="text" id="username">
+<br/>
+<br/>
+<label>Password:</label> <input type="password" id="password">
+<br/>
+<br/>
+<label>Confirm password:</label> <input type="password" id="confirm">
+<br/>
+<br/>
+<button type="button" onclick="fun1()">Register</button>
+<script>
+function fun1(){
+let username = document.getElementById("username");
+let password = document.getElementById("password");
+let confirm = document.getElementById("confirm");
+username.style.border="";
+password.style.border="";
+confirm.style.border="";
+if(username.value==""){
+username.style.border="2px solid red";
+}
+if(password.value==""){
+password.style.border="2px solid red";
+}
+if(confirm.value==""){
+confirm.style.border="2px solid red";
+}
+if(username.value!="" && password.value!="" && confirm.value!=""){
+alert("Registration Successful");
+}
+}
+</script>
+</center>
+</body>
+</html>
