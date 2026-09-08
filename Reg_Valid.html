@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>REGISTRATION PAGE</title>
+</head>
+<body>
+<h2>REGISTRATION VALIDATION PAGE</h2>
+<div>
+<form onsubmit="return validateForm()">
+<label>FULL NAME: </label>
+<input type="text" id="name" placeholder="Enter Full Name"/>
+<br/>
+<span id="nerror"></span>
+<br/>
+<label>EMAIL: </label>
+<input type="text" id="email" placeholder="Enter Email"/>
+<br/>
+<span id="eerror"></span>
+<br/>
+<label>PHONE NUMBER: </label>
+<input type="text" id="phone" placeholder="Enter Phone Number"/>
+<br/>
+<span id="pherror"></span>
+<br/>
+<label>DATE OF BIRTH: </label>
+<input type="date" id="dob"/>
+<br/>
+<span id="doberror"></span>
+<br/>
+<label>GENDER: </label>
+<input type="radio" name="gender" id="male"/> Male
+<input type="radio" name="gender" id="female"/> Female
+<br/>
+<span id="gerror"></span>
+<br/>
+<label>ADDRESS: </label>
+<textarea id="address" placeholder="Enter Address"></textarea>
+<br/>
+<span id="aerror"></span>
+<br/>
+<label>USERNAME: </label>
+<input type="text" id="uname" placeholder="Enter Username"/>
+<br/>
+<span id="uerror"></span>
+<br/>
+<label>PASSWORD: </label>
+<input type="password" id="pass" placeholder="Enter Password"/>
+<br/>
+<span id="perror"></span>
+<br/>
+<label>CONFIRM PASSWORD: </label>
+<input type="password" id="cpass" placeholder="Confirm Password"/>
+<br/>
+<span id="cerror"></span>
+<br/>
+<input type="checkbox" id="terms"/>
+<label>I agree to the Terms and Conditions</label>
+<br/>
+<span id="terror"></span>
+<br/>
+<input type="submit" value="REGISTER"/>
+<input type="reset" value="CLEAR"/>
+</form>
+</div>
+<script>
+function validateForm()
+{
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let phone=document.getElementById("phone").value;
+let dob=document.getElementById("dob").value;
+let address=document.getElementById("address").value;
+let unm=document.getElementById("uname").value;
+let pwd=document.getElementById("pass").value;
+let cpwd=document.getElementById("cpass").value;
+let male=document.getElementById("male").checked;
+let female=document.getElementById("female").checked;
+let terms=document.getElementById("terms").checked;
+
+let nerr=document.getElementById("nerror");
+let eerr=document.getElementById("eerror");
+let pherr=document.getElementById("pherror");
+let doberr=document.getElementById("doberror");
+let gerr=document.getElementById("gerror");
+let aerr=document.getElementById("aerror");
+let uerr=document.getElementById("uerror");
+let perr=document.getElementById("perror");
+let cerr=document.getElementById("cerror");
+let terr=document.getElementById("terror");
+
+let valid=true;
+
+nerr.innerHTML="";
+eerr.innerHTML="";
+pherr.innerHTML="";
+doberr.innerHTML="";
+gerr.innerHTML="";
+aerr.innerHTML="";
+uerr.innerHTML="";
+perr.innerHTML="";
+cerr.innerHTML="";
+terr.innerHTML="";
+
+if(name==="")
+{
+nerr.innerHTML="Enter FULL NAME";
+valid=false;
+}
+else if(name.length<3)
+{
+nerr.innerHTML="Name should have atleast 3 characters";
+valid=false;
+}
+
+if(email==="")
+{
+eerr.innerHTML="Enter EMAIL";
+valid=false;
+}
+else if(!email.includes("@"))
+{
+eerr.innerHTML="Enter a valid email id";
+valid=false;
+}
+
+if(phone==="")
+{
+pherr.innerHTML="Enter PHONE NUMBER";
+valid=false;
+}
+else if(phone.length!=10 || isNaN(phone))
+{
+pherr.innerHTML="Enter a valid 10-digit phone number";
+valid=false;
+}
+
+if(dob==="")
+{
+doberr.innerHTML="Select DATE OF BIRTH";
+valid=false;
+}
+
+if(!male && !female)
+{
+gerr.innerHTML="Select GENDER";
+valid=false;
+}
+
+if(address==="")
+{
+aerr.innerHTML="Enter ADDRESS";
+valid=false;
+}
+
+if(unm==="")
+{
+uerr.innerHTML="Enter USERNAME";
+valid=false;
+}
+else if(unm.length<3)
+{
+uerr.innerHTML="Username should have atleast 3 characters";
+valid=false;
+}
+
+if(pwd==="")
+{
+perr.innerHTML="Enter PASSWORD";
+valid=false;
+}
+else if(pwd.length<8)
+{
+perr.innerHTML="Password should have 8 characters";
+valid=false;
+}
+else if(!pwd.match(/[0-9]/))
+{
+perr.innerHTML="Password should contain atleast one number";
+valid=false;
+}
+
+if(cpwd==="")
+{
+cerr.innerHTML="Confirm your PASSWORD";
+valid=false;
+}
+else if(pwd!==cpwd)
+{
+cerr.innerHTML="Passwords do not match";
+valid=false;
+}
+
+if(!terms)
+{
+terr.innerHTML="Please accept Terms and Conditions";
+valid=false;
+}
+
+if(valid)
+{
+alert("Registration successful");
+}
+
+return valid;
+}
+
+</script>
+</body>
+</html>
+
