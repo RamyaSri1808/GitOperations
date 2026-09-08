@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>JavaScript Demo Page</title>
+</head>
+
+<body>
+
+<h2>Arithmetic Operations using JavaScript</h2>
+
+<br/>
+<br/>
+
+<label>A=> </label>
+<input type="text" placeholder="enter a value" id="text1">
+
+<br/>
+
+<label>B=> </label>
+<input type="text" placeholder="enter a value" id="text2">
+
+<br/>
+<br/>
+
+<button type="button" onClick="fun1()">+</button>
+
+<button type="button" onClick="fun2()">-</button>
+
+<button type="button" onClick="fun3()">*</button>
+
+<button type="button" onClick="fun4()">/</button>
+
+<br/>
+<br/>
+
+<button type="button" onClick="fun5()">=</button>
+
+<p id="demo1"></p>
+
+
+<script>
+
+var operation;
+
+
+function fun1()
+{
+    operation = "+";
+}
+
+
+function fun2()
+{
+    operation = "-";
+}
+
+
+function fun3()
+{
+    operation = "*";
+}
+
+
+function fun4()
+{
+    operation = "/";
+}
+
+
+function fun5()
+{
+    var a = document.getElementById('text1').value;
+    var b = document.getElementById('text2').value;
+
+    var x = parseInt(a);
+    var y = parseInt(b);
+
+    var c;
+
+    if(operation == "+")
+    {
+        c = x + y;
+        document.getElementById('demo1').innerHTML = "Addition = " + c;
+    }
+
+    else if(operation == "-")
+    {
+        c = x - y;
+        document.getElementById('demo1').innerHTML = "Subtraction = " + c;
+    }
+
+    else if(operation == "*")
+    {
+        c = x * y;
+        document.getElementById('demo1').innerHTML = "Multiplication = " + c;
+    }
+
+    else if(operation == "/")
+    {
+        c = x / y;
+        document.getElementById('demo1').innerHTML = "Division = " + c;
+    }
+
+    else
+    {
+        document.getElementById('demo1').innerHTML =
+        "Please select an operation";
+    }
+}
+
+</script>
+
+</body>
+</html>
+
